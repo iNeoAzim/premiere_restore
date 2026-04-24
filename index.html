@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier Restore LLC — Interior Painting & Cabinets</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FDFAF4;
+    --deep-navy: #1A2332;
+    --slate: #2E3D50;
+    --gold: #C9A84C;
+    --gold-light: #E4C97B;
+    --taupe: #8B7D6E;
+    --accent-red: #8B2E2E;
+    --light-gray: #E8E3DA;
+  }
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Jost’, sans-serif;
+background: var(–warm-white);
+color: var(–deep-navy);
+overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.2rem 4rem;
+background: rgba(26,35,50,0.96);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+.nav-logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.3rem;
+font-weight: 700;
+color: var(–cream);
+letter-spacing: 0.02em;
+}
+.nav-logo span { color: var(–gold); }
+.nav-links {
+display: flex; gap: 2.5rem; list-style: none;
+}
+.nav-links a {
+text-decoration: none;
+color: rgba(245,240,232,0.75);
+font-size: 0.85rem;
+font-weight: 500;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+transition: color 0.25s;
+}
+.nav-links a:hover { color: var(–gold); }
+.nav-cta {
+background: var(–gold);
+color: var(–deep-navy) !important;
+padding: 0.55rem 1.4rem;
+border-radius: 2px;
+font-weight: 600 !important;
+transition: background 0.25s !important;
+}
+.nav-cta:hover { background: var(–gold-light) !important; color: var(–deep-navy) !important; }
+
+/* ─── HERO ─── */
+.hero {
+min-height: 100vh;
+background: var(–deep-navy);
+display: grid;
+grid-template-columns: 1fr 1fr;
+position: relative;
+overflow: hidden;
+}
+
+.hero-left {
+display: flex;
+flex-direction: column;
+justify-content: center;
+padding: 8rem 4rem 4rem 5rem;
+position: relative;
+z-index: 2;
+}
+
+.hero-eyebrow {
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 1.5rem;
+display: flex;
+align-items: center;
+gap: 0.8rem;
+}
+.hero-eyebrow::before {
+content: ‘’;
+display: block;
+width: 2.5rem;
+height: 1px;
+background: var(–gold);
+}
+
+.hero h1 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(3rem, 5vw, 5rem);
+font-weight: 900;
+line-height: 1.05;
+color: var(–cream);
+margin-bottom: 1.8rem;
+}
+.hero h1 em {
+font-style: italic;
+color: var(–gold);
+}
+
+.hero-sub {
+font-size: 1rem;
+line-height: 1.8;
+color: rgba(245,240,232,0.65);
+max-width: 28rem;
+margin-bottom: 3rem;
+}
+
+.hero-btns {
+display: flex;
+gap: 1rem;
+flex-wrap: wrap;
+}
+
+.btn-primary {
+background: var(–gold);
+color: var(–deep-navy);
+padding: 0.9rem 2.2rem;
+border: none;
+border-radius: 2px;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+cursor: pointer;
+text-decoration: none;
+transition: transform 0.2s, background 0.2s;
+display: inline-block;
+}
+.btn-primary:hover { background: var(–gold-light); transform: translateY(-2px); }
+
+.btn-outline {
+background: transparent;
+color: var(–cream);
+padding: 0.9rem 2.2rem;
+border: 1px solid rgba(245,240,232,0.35);
+border-radius: 2px;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.85rem;
+font-weight: 500;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+cursor: pointer;
+text-decoration: none;
+transition: border-color 0.2s, color 0.2s;
+display: inline-block;
+}
+.btn-outline:hover { border-color: var(–gold); color: var(–gold); }
+
+/* Hero right — decorative panel */
+.hero-right {
+position: relative;
+overflow: hidden;
+}
+.hero-right-inner {
+position: absolute; inset: 0;
+background:
+linear-gradient(135deg, rgba(26,35,50,0.55) 0%, transparent 60%),
+url(‘https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=900&q=80’) center/cover no-repeat;
+animation: slowZoom 18s ease-in-out infinite alternate;
+}
+@keyframes slowZoom {
+from { transform: scale(1); }
+to   { transform: scale(1.06); }
+}
+.hero-right-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(to right, var(–deep-navy) 0%, transparent 35%);
+z-index: 1;
+}
+
+/* Floating badge */
+.hero-badge {
+position: absolute;
+bottom: 3rem; left: 50%;
+transform: translateX(-50%);
+z-index: 3;
+background: rgba(245,240,232,0.06);
+border: 1px solid rgba(201,168,76,0.35);
+backdrop-filter: blur(12px);
+padding: 1rem 2rem;
+border-radius: 4px;
+display: flex;
+gap: 2.5rem;
+white-space: nowrap;
+}
+.badge-stat { text-align: center; }
+.badge-stat strong {
+display: block;
+font-family: ‘Playfair Display’, serif;
+font-size: 1.6rem;
+color: var(–gold);
+line-height: 1;
+}
+.badge-stat span {
+font-size: 0.72rem;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: rgba(245,240,232,0.6);
+}
+.badge-divider {
+width: 1px; background: rgba(201,168,76,0.3);
+align-self: stretch;
+}
+
+/* ─── SERVICES ─── */
+#services {
+background: var(–cream);
+padding: 7rem 5rem;
+}
+
+.section-header {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+margin-bottom: 4rem;
+gap: 2rem;
+}
+.section-label {
+font-size: 0.72rem;
+font-weight: 600;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 0.75rem;
+display: flex;
+align-items: center;
+gap: 0.75rem;
+}
+.section-label::before {
+content: ‘’;
+display: block;
+width: 2rem;
+height: 1px;
+background: var(–gold);
+}
+.section-title {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 3.5vw, 3rem);
+font-weight: 700;
+line-height: 1.15;
+color: var(–deep-navy);
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2px;
+}
+
+.service-card {
+background: var(–deep-navy);
+padding: 3rem 2.5rem;
+position: relative;
+overflow: hidden;
+transition: transform 0.3s;
+cursor: default;
+}
+.service-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 3px;
+background: var(–gold);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.35s ease;
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { transform: translateY(-4px); }
+
+.service-number {
+font-family: ‘Playfair Display’, serif;
+font-size: 4rem;
+font-weight: 900;
+color: rgba(201,168,76,0.12);
+line-height: 1;
+margin-bottom: 1.5rem;
+transition: color 0.3s;
+}
+.service-card:hover .service-number { color: rgba(201,168,76,0.22); }
+
+.service-icon {
+width: 3rem; height: 3rem;
+background: rgba(201,168,76,0.15);
+border-radius: 2px;
+display: flex; align-items: center; justify-content: center;
+margin-bottom: 1.5rem;
+font-size: 1.4rem;
+}
+
+.service-card h3 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.4rem;
+font-weight: 600;
+color: var(–cream);
+margin-bottom: 1rem;
+}
+.service-card p {
+font-size: 0.9rem;
+line-height: 1.8;
+color: rgba(245,240,232,0.55);
+}
+
+.service-list {
+list-style: none;
+margin-top: 1.5rem;
+}
+.service-list li {
+font-size: 0.82rem;
+color: rgba(245,240,232,0.5);
+padding: 0.4rem 0;
+border-top: 1px solid rgba(245,240,232,0.06);
+display: flex;
+align-items: center;
+gap: 0.6rem;
+}
+.service-list li::before {
+content: ‘—’;
+color: var(–gold);
+font-size: 0.7rem;
+}
+
+/* ─── ABOUT STRIP ─── */
+#about {
+padding: 7rem 5rem;
+background: var(–warm-white);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6rem;
+align-items: center;
+}
+
+.about-img-wrap {
+position: relative;
+}
+.about-img {
+width: 100%;
+aspect-ratio: 4/5;
+object-fit: cover;
+display: block;
+}
+.about-img-bg {
+width: 100%;
+aspect-ratio: 4/5;
+background: url(‘https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800&q=80’) center/cover no-repeat;
+display: block;
+}
+.about-accent {
+position: absolute;
+bottom: -1.5rem; right: -1.5rem;
+width: 60%;
+height: 60%;
+border: 2px solid var(–gold);
+z-index: -1;
+}
+.about-tag {
+position: absolute;
+top: 2rem; left: -2rem;
+background: var(–gold);
+color: var(–deep-navy);
+padding: 1.2rem 1.5rem;
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+font-weight: 700;
+line-height: 1.2;
+z-index: 2;
+}
+
+.about-content h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+font-weight: 700;
+line-height: 1.2;
+color: var(–deep-navy);
+margin-bottom: 1.5rem;
+}
+.about-content p {
+font-size: 0.95rem;
+line-height: 1.9;
+color: var(–taupe);
+margin-bottom: 1.2rem;
+}
+
+.values-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+margin-top: 2rem;
+}
+.value-item {
+padding: 1.2rem;
+background: var(–cream);
+border-left: 3px solid var(–gold);
+}
+.value-item h4 {
+font-size: 0.85rem;
+font-weight: 600;
+color: var(–deep-navy);
+margin-bottom: 0.3rem;
+letter-spacing: 0.05em;
+text-transform: uppercase;
+}
+.value-item p {
+font-size: 0.8rem;
+color: var(–taupe);
+line-height: 1.6;
+margin: 0;
+}
+
+/* ─── PROCESS ─── */
+#process {
+background: var(–deep-navy);
+padding: 7rem 5rem;
+}
+#process .section-title { color: var(–cream); }
+
+.process-steps {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 0;
+margin-top: 4rem;
+position: relative;
+}
+.process-steps::before {
+content: ‘’;
+position: absolute;
+top: 2.8rem; left: 12.5%;
+right: 12.5%;
+height: 1px;
+background: rgba(201,168,76,0.25);
+z-index: 0;
+}
+
+.process-step {
+text-align: center;
+padding: 0 1.5rem;
+position: relative;
+z-index: 1;
+}
+.step-circle {
+width: 5.5rem; height: 5.5rem;
+border-radius: 50%;
+background: var(–slate);
+border: 1px solid rgba(201,168,76,0.3);
+display: flex; flex-direction: column;
+align-items: center; justify-content: center;
+margin: 0 auto 1.5rem;
+transition: background 0.3s, border-color 0.3s;
+}
+.process-step:hover .step-circle {
+background: rgba(201,168,76,0.15);
+border-color: var(–gold);
+}
+.step-num {
+font-size: 0.65rem;
+letter-spacing: 0.15em;
+color: var(–gold);
+font-weight: 600;
+text-transform: uppercase;
+}
+.step-icon { font-size: 1.4rem; }
+
+.process-step h4 {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+color: var(–cream);
+margin-bottom: 0.75rem;
+}
+.process-step p {
+font-size: 0.82rem;
+color: rgba(245,240,232,0.5);
+line-height: 1.7;
+}
+
+/* ─── GALLERY ─── */
+#gallery {
+padding: 7rem 5rem;
+background: var(–cream);
+}
+
+.gallery-grid {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr;
+grid-template-rows: 18rem 18rem;
+gap: 8px;
+margin-top: 3.5rem;
+}
+.gallery-item {
+overflow: hidden;
+position: relative;
+background: var(–light-gray);
+}
+.gallery-item:first-child {
+grid-row: span 2;
+}
+.gallery-img {
+width: 100%; height: 100%;
+object-fit: cover;
+transition: transform 0.55s ease;
+display: block;
+}
+.gallery-bg {
+width: 100%; height: 100%;
+background-size: cover;
+background-position: center;
+transition: transform 0.55s ease;
+}
+.gallery-item:hover .gallery-bg,
+.gallery-item:hover .gallery-img { transform: scale(1.06); }
+
+.gallery-overlay {
+position: absolute; inset: 0;
+background: linear-gradient(to top, rgba(26,35,50,0.7) 0%, transparent 50%);
+opacity: 0;
+transition: opacity 0.35s;
+display: flex; align-items: flex-end;
+padding: 1.5rem;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-label {
+font-size: 0.8rem;
+font-weight: 600;
+letter-spacing: 0.1em;
+text-transform: uppercase;
+color: var(–cream);
+}
+
+/* ─── TESTIMONIALS ─── */
+#testimonials {
+background: var(–warm-white);
+padding: 7rem 5rem;
+}
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+margin-top: 4rem;
+}
+
+.testimonial-card {
+background: var(–cream);
+padding: 2.5rem;
+border-bottom: 3px solid transparent;
+transition: border-color 0.3s, transform 0.3s;
+}
+.testimonial-card:hover {
+border-color: var(–gold);
+transform: translateY(-4px);
+}
+
+.stars {
+color: var(–gold);
+font-size: 0.9rem;
+letter-spacing: 0.15em;
+margin-bottom: 1.2rem;
+}
+.testimonial-text {
+font-size: 0.92rem;
+line-height: 1.85;
+color: var(–slate);
+font-style: italic;
+margin-bottom: 1.5rem;
+}
+.testimonial-author {
+display: flex;
+align-items: center;
+gap: 0.8rem;
+}
+.author-avatar {
+width: 2.5rem; height: 2.5rem;
+border-radius: 50%;
+background: var(–deep-navy);
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Playfair Display’, serif;
+font-size: 1rem;
+color: var(–gold);
+font-weight: 700;
+flex-shrink: 0;
+}
+.author-name {
+font-weight: 600;
+font-size: 0.88rem;
+color: var(–deep-navy);
+display: block;
+}
+.author-loc {
+font-size: 0.75rem;
+color: var(–taupe);
+}
+
+/* ─── CTA ─── */
+#contact {
+background: var(–deep-navy);
+padding: 7rem 5rem;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 6rem;
+align-items: center;
+}
+
+#contact h2 {
+font-family: ‘Playfair Display’, serif;
+font-size: clamp(2rem, 3vw, 3rem);
+font-weight: 700;
+color: var(–cream);
+line-height: 1.15;
+margin-bottom: 1.5rem;
+}
+#contact h2 span { color: var(–gold); }
+#contact p {
+font-size: 0.95rem;
+line-height: 1.8;
+color: rgba(245,240,232,0.6);
+margin-bottom: 2rem;
+}
+
+.contact-info {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+margin-bottom: 2.5rem;
+}
+.contact-row {
+display: flex;
+align-items: center;
+gap: 1rem;
+color: rgba(245,240,232,0.7);
+font-size: 0.9rem;
+}
+.contact-icon {
+width: 2.5rem; height: 2.5rem;
+background: rgba(201,168,76,0.12);
+border: 1px solid rgba(201,168,76,0.25);
+border-radius: 2px;
+display: flex; align-items: center; justify-content: center;
+font-size: 1rem;
+flex-shrink: 0;
+}
+
+/* Form */
+.contact-form {
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 1rem;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+background: rgba(245,240,232,0.06);
+border: 1px solid rgba(245,240,232,0.15);
+color: var(–cream);
+padding: 0.9rem 1.2rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.88rem;
+border-radius: 2px;
+outline: none;
+transition: border-color 0.25s;
+width: 100%;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+color: rgba(245,240,232,0.3);
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+border-color: var(–gold);
+}
+.contact-form select option { background: var(–deep-navy); }
+.contact-form textarea { resize: vertical; min-height: 100px; }
+
+/* ─── FOOTER ─── */
+footer {
+background: #111820;
+padding: 3rem 5rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 1rem;
+border-top: 1px solid rgba(201,168,76,0.15);
+}
+.footer-logo {
+font-family: ‘Playfair Display’, serif;
+font-size: 1.1rem;
+color: var(–cream);
+font-weight: 700;
+}
+.footer-logo span { color: var(–gold); }
+.footer-copy {
+font-size: 0.78rem;
+color: rgba(245,240,232,0.35);
+}
+.footer-links {
+display: flex; gap: 2rem; list-style: none;
+}
+.footer-links a {
+font-size: 0.78rem;
+color: rgba(245,240,232,0.4);
+text-decoration: none;
+transition: color 0.2s;
+}
+.footer-links a:hover { color: var(–gold); }
+
+/* ─── ANIMATIONS ─── */
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+opacity: 1;
+transform: none;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+nav { padding: 1.2rem 2rem; }
+.nav-links { display: none; }
+.hero { grid-template-columns: 1fr; }
+.hero-right { display: none; }
+.hero-left { padding: 7rem 2rem 5rem; }
+#services, #about, #process, #gallery, #testimonials, #contact, footer {
+padding: 4rem 2rem;
+}
+#about, #contact { grid-template-columns: 1fr; gap: 3rem; }
+.services-grid { grid-template-columns: 1fr; }
+.process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+.process-steps::before { display: none; }
+.gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+.gallery-item:first-child { grid-row: auto; }
+.gallery-bg { height: 200px; }
+.testimonials-grid { grid-template-columns: 1fr; }
+.hero-badge { left: 1rem; right: 1rem; transform: none; flex-wrap: wrap; justify-content: center; }
+.section-header { flex-direction: column; align-items: flex-start; }
+.values-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-logo">Premier <span>Restore</span> LLC</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Premier Restore LLC</p>
+    <h1>Transform Your<br><em>Interior</em> Into<br>Something New</h1>
+    <p class="hero-sub">Expert interior painting and cabinet refinishing — we bring precision craftsmanship and premium finishes to every room in your home.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+      <a href="#services" class="btn-outline">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner"></div>
+    <div class="hero-right-overlay"></div>
+  </div>
+
+  <div class="hero-badge">
+    <div class="badge-stat">
+      <strong>500+</strong>
+      <span>Projects Done</span>
+    </div>
+    <div class="badge-divider"></div>
+    <div class="badge-stat">
+      <strong>10+</strong>
+      <span>Years Experience</span>
+    </div>
+    <div class="badge-divider"></div>
+    <div class="badge-stat">
+      <strong>100%</strong>
+      <span>Satisfaction</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Premium Services<br>for Every Room</h2>
+    </div>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-number">01</div>
+      <div class="service-icon">🖌️</div>
+      <h3>Interior Painting</h3>
+      <p>Flawless wall-to-ceiling finishes using premium paints that last. We prep, prime, and deliver a clean result every time.</p>
+      <ul class="service-list">
+        <li>Living rooms & bedrooms</li>
+        <li>Kitchens & bathrooms</li>
+        <li>Ceilings & trim</li>
+        <li>Accent walls & textures</li>
+      </ul>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">02</div>
+      <div class="service-icon">🚪</div>
+      <h3>Cabinet Refinishing</h3>
+      <p>Restore or transform your cabinets without the cost of replacement. New hardware, new finish, new look — same great layout.</p>
+      <ul class="service-list">
+        <li>Kitchen cabinets</li>
+        <li>Bathroom vanities</li>
+        <li>Built-in cabinetry</li>
+        <li>Color & finish changes</li>
+      </ul>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-number">03</div>
+      <div class="service-icon">✨</div>
+      <h3>Color Consulting</h3>
+      <p>Not sure what shade is right? Our experts help you find the perfect palette to match your vision, furniture, and lighting.</p>
+      <ul class="service-list">
+        <li>Full room color plans</li>
+        <li>Complementary palettes</li>
+        <li>Finish & sheen selection</li>
+        <li>Before/after previews</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="about-img-wrap reveal">
+    <div class="about-img-bg" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80');"></div>
+    <div class="about-accent"></div>
+    <div class="about-tag">Premier<br>Quality</div>
+  </div>
+  <div class="about-content reveal">
+    <p class="section-label">About Us</p>
+    <h2>Craftsmanship You Can See. Results You Can Trust.</h2>
+    <p>At Premier Restore LLC, we believe every home deserves to look its best. Our team brings years of professional experience and a genuine passion for detail to every single project — big or small.</p>
+    <p>From a fresh coat of paint on a single room to a full cabinet transformation, we treat your home with the care it deserves. No shortcuts, no mess left behind — just beautiful, lasting work.</p>
+    <div class="values-grid">
+      <div class="value-item">
+        <h4>Licensed & Insured</h4>
+        <p>Full coverage for your peace of mind.</p>
+      </div>
+      <div class="value-item">
+        <h4>Clean Worksite</h4>
+        <p>We protect your home and clean up daily.</p>
+      </div>
+      <div class="value-item">
+        <h4>On-Time Delivery</h4>
+        <p>We respect your schedule, always.</p>
+      </div>
+      <div class="value-item">
+        <h4>Premium Materials</h4>
+        <p>Top-grade paints and finishes only.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section id="process">
+  <div class="reveal">
+    <p class="section-label" style="color: var(--gold);">How It Works</p>
+    <h2 class="section-title">Simple. Clear. Stress-Free.</h2>
+  </div>
+
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-circle">
+        <span class="step-num">Step 1</span>
+        <span class="step-icon">📞</span>
+      </div>
+      <h4>Free Consultation</h4>
+      <p>We discuss your vision, project scope, and timeline — no cost, no obligation.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">
+        <span class="step-num">Step 2</span>
+        <span class="step-icon">📋</span>
+      </div>
+      <h4>Detailed Estimate</h4>
+      <p>You receive a clear, itemized quote so there are no surprises later.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">
+        <span class="step-num">Step 3</span>
+        <span class="step-icon">🎨</span>
+      </div>
+      <h4>Expert Execution</h4>
+      <p>Our skilled crew arrives on time and works with minimal disruption to your home.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">
+        <span class="step-num">Step 4</span>
+        <span class="step-icon">🏠</span>
+      </div>
+      <h4>Final Walkthrough</h4>
+      <p>We walk through every detail with you to ensure you're 100% satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Our Work</p>
+      <h2 class="section-title">Recent Projects</h2>
+    </div>
+  </div>
+
+  <div class="gallery-grid reveal">
+    <div class="gallery-item">
+      <div class="gallery-bg" style="background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80'); height: 100%;"></div>
+      <div class="gallery-overlay"><span class="gallery-label">Kitchen Cabinet Refinish</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-bg" style="background-image: url('https://images.unsplash.com/photo-1505693314120-0d443867891c?w=600&q=80');"></div>
+      <div class="gallery-overlay"><span class="gallery-label">Master Bedroom</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-bg" style="background-image: url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=600&q=80');"></div>
+      <div class="gallery-overlay"><span class="gallery-label">Living Room</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-bg" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80');"></div>
+      <div class="gallery-overlay"><span class="gallery-label">Bathroom Vanity</span></div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-bg" style="background-image: url('https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80');"></div>
+      <div class="gallery-overlay"><span class="gallery-label">Kitchen Refresh</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials">
+  <div class="section-header reveal">
+    <div>
+      <p class="section-label">Reviews</p>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+  </div>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Premier Restore transformed our entire first floor. The attention to detail on the trim work was incredible — we couldn't be happier with the result."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div>
+          <span class="author-name">Maria T.</span>
+          <span class="author-loc">Homeowner</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Our kitchen cabinets look brand new. They matched the stain perfectly and the finish is flawless. Saved us thousands over a full replacement."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">J</div>
+        <div>
+          <span class="author-name">James R.</span>
+          <span class="author-loc">Kitchen Remodel</span>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">"Professional, punctual, and clean. They taped off everything, protected my floors, and left the house spotless. Would absolutely hire them again."</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">S</div>
+        <div>
+          <span class="author-name">Sandra K.</span>
+          <span class="author-loc">Full Interior Paint</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+  <div class="reveal">
+    <p class="section-label" style="color: var(--gold);">Get In Touch</p>
+    <h2>Ready to <span>Restore</span> Your Space?</h2>
+    <p>Contact us today for your free, no-obligation estimate. We'll come to you, assess the project, and give you a clear quote — usually within 24 hours.</p>
+    <div class="contact-info">
+      <div class="contact-row">
+        <div class="contact-icon">📞</div>
+        <span>(555) 123-4567</span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">✉️</div>
+        <span>info@premierrestorellc.com</span>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <span>Serving the greater metropolitan area</span>
+      </div>
+    </div>
+    <a href="tel:5551234567" class="btn-primary">Call Us Now</a>
+  </div>
+
+  <div class="contact-form reveal">
+    <div class="form-row">
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+    </div>
+    <input type="email" placeholder="Email Address">
+    <input type="tel" placeholder="Phone Number">
+    <select>
+      <option value="" disabled selected>Service Needed</option>
+      <option>Interior Painting</option>
+      <option>Cabinet Refinishing</option>
+      <option>Color Consulting</option>
+      <option>Full Interior Makeover</option>
+      <option>Other</option>
+    </select>
+    <textarea placeholder="Tell us about your project — rooms, size, timeline..."></textarea>
+    <button class="btn-primary" type="button" onclick="this.textContent='Message Sent ✓'; this.style.background='#2E3D50';">Request Free Estimate</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">Premier <span>Restore</span> LLC</div>
+  <p class="footer-copy">© 2024 Premier Restore LLC. All rights reserved.</p>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
