@@ -781,7 +781,6 @@ transform: none;
 .grw-logo-g {
   width: 2.8rem; height: 2.8rem;
   border-radius: 50%;
-  background: #fff;
   border: 1px solid var(--light-gray);
   display: flex; align-items: center; justify-content: center;
   font-size: 1.5rem;
@@ -789,7 +788,6 @@ transform: none;
   font-family: 'Jost', sans-serif;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   flex-shrink: 0;
-  /* Google "G" color */
   background: linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -925,6 +923,14 @@ transform: none;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* Address link in contact section */
+.contact-map-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-map-link:hover { color: var(--gold); }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
@@ -1281,7 +1287,7 @@ padding: 4rem 2rem;
       </div>
       <div class="contact-row">
         <div class="contact-icon">📍</div>
-        <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='inherit'">21 Kristin Dr, 60195 Schaumburg</a>
+        <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="contact-map-link">21 Kristin Dr, 60195 Schaumburg</a>
       </div>
     </div>
     <a href="tel:8153558131" class="btn-primary">Call Us Now</a>
