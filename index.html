@@ -752,6 +752,180 @@ opacity: 1;
 transform: none;
 }
 
+/* ─── GOOGLE REVIEWS WIDGET ─── */
+.google-reviews-widget {
+  background: var(--warm-white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  box-shadow: 0 4px 24px rgba(26,35,50,0.06);
+  flex-wrap: wrap;
+}
+.grw-left {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+.grw-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.grw-logo-g {
+  width: 2.8rem; height: 2.8rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid var(--light-gray);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Jost', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+  /* Google "G" color */
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.grw-text-g {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.grw-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+
+.grw-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grw-score-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--deep-navy);
+  line-height: 1;
+}
+.grw-stars {
+  color: #FBBC05;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  margin: 0.3rem 0 0.2rem;
+}
+.grw-count {
+  font-size: 0.75rem;
+  color: var(--taupe);
+  letter-spacing: 0.05em;
+}
+
+.grw-divider {
+  width: 1px;
+  height: 4rem;
+  background: var(--light-gray);
+  flex-shrink: 0;
+}
+
+.grw-summary {
+  max-width: 22rem;
+}
+.grw-summary p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--taupe);
+}
+
+.btn-google-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #fff;
+  color: #1A2332;
+  border: 2px solid #dadce0;
+  border-radius: 4px;
+  padding: 0.85rem 1.8rem;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn-google-review:hover {
+  box-shadow: 0 4px 16px rgba(66,133,244,0.2);
+  border-color: #4285F4;
+  transform: translateY(-2px);
+}
+.btn-google-review .g-icon {
+  font-size: 1.1rem;
+}
+
+/* Google review badge strip */
+.google-badge-strip {
+  background: linear-gradient(135deg, var(--deep-navy) 0%, var(--slate) 100%);
+  padding: 1.8rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 1px solid rgba(201,168,76,0.15);
+}
+.google-badge-strip p {
+  font-size: 0.92rem;
+  color: rgba(245,240,232,0.75);
+  margin: 0;
+}
+.google-badge-strip .btn-google-review {
+  border-color: rgba(255,255,255,0.25);
+}
+.google-badge-strip .btn-google-review:hover {
+  border-color: #4285F4;
+}
+
+/* Testimonial Google badge */
+.testimonial-source {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--light-gray);
+}
+.testimonial-source span {
+  font-size: 0.72rem;
+  color: var(--taupe);
+  letter-spacing: 0.05em;
+}
+.google-g-mini {
+  font-size: 0.85rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #4285F4 0%, #34A853 33%, #FBBC05 66%, #EA4335 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
 nav { padding: 1.2rem 2rem; }
@@ -773,6 +947,10 @@ padding: 4rem 2rem;
 .hero-badge { left: 1rem; right: 1rem; transform: none; flex-wrap: wrap; justify-content: center; }
 .section-header { flex-direction: column; align-items: flex-start; }
 .values-grid { grid-template-columns: 1fr; }
+.google-reviews-widget { padding: 2rem 1.5rem; }
+.grw-divider { display: none; }
+.grw-summary { max-width: 100%; }
+.google-badge-strip { padding: 1.5rem 2rem; }
 }
 </style>
 
@@ -788,6 +966,7 @@ padding: 4rem 2rem;
     <li><a href="#about">About</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#contact" class="nav-cta">Free Estimate</a></li>
   </ul>
 </nav>
@@ -997,6 +1176,34 @@ padding: 4rem 2rem;
       <p class="section-label">Reviews</p>
       <h2 class="section-title">What Our Clients Say</h2>
     </div>
+    <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="btn-google-review">
+      <span class="g-icon">G</span> Leave Us a Review
+    </a>
+  </div>
+
+  <!-- Google Reviews Widget -->
+  <div class="google-reviews-widget reveal">
+    <div class="grw-left">
+      <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="grw-logo" aria-label="View on Google Maps">
+        <div style="display:flex;flex-direction:column;align-items:center;">
+          <span class="grw-text-g">G</span>
+          <span class="grw-label">Google</span>
+        </div>
+      </a>
+      <div class="grw-divider"></div>
+      <div class="grw-score">
+        <span class="grw-score-num">5.0</span>
+        <div class="grw-stars">★★★★★</div>
+        <span class="grw-count">Rated on Google Maps</span>
+      </div>
+      <div class="grw-divider"></div>
+      <div class="grw-summary">
+        <p>Our clients love the results — and we'd love to hear from you too. Share your experience and help other homeowners discover Premier Restore LLC.</p>
+      </div>
+    </div>
+    <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="btn-google-review">
+      <span class="g-icon">★</span> Write a Google Review
+    </a>
   </div>
 
   <div class="testimonials-grid">
@@ -1010,6 +1217,10 @@ padding: 4rem 2rem;
           <span class="author-loc">Homeowner</span>
         </div>
       </div>
+      <div class="testimonial-source">
+        <span class="google-g-mini">G</span>
+        <span>Posted on Google</span>
+      </div>
     </div>
     <div class="testimonial-card reveal">
       <div class="stars">★★★★★</div>
@@ -1020,6 +1231,10 @@ padding: 4rem 2rem;
           <span class="author-name">James R.</span>
           <span class="author-loc">Kitchen Remodel</span>
         </div>
+      </div>
+      <div class="testimonial-source">
+        <span class="google-g-mini">G</span>
+        <span>Posted on Google</span>
       </div>
     </div>
     <div class="testimonial-card reveal">
@@ -1032,9 +1247,21 @@ padding: 4rem 2rem;
           <span class="author-loc">Full Interior Paint</span>
         </div>
       </div>
+      <div class="testimonial-source">
+        <span class="google-g-mini">G</span>
+        <span>Posted on Google</span>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- GOOGLE REVIEW BADGE STRIP -->
+<div class="google-badge-strip reveal">
+  <p>Happy with our work? Your review means the world to us and helps other homeowners find us.</p>
+  <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="btn-google-review">
+    <span class="g-icon">G</span> Leave a Review on Google
+  </a>
+</div>
 
 <!-- CONTACT -->
 
@@ -1054,10 +1281,13 @@ padding: 4rem 2rem;
       </div>
       <div class="contact-row">
         <div class="contact-icon">📍</div>
-        <span>21 Kristin Dr, 60195 Schaumburg</span>
+        <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='inherit'">21 Kristin Dr, 60195 Schaumburg</a>
       </div>
     </div>
     <a href="tel:8153558131" class="btn-primary">Call Us Now</a>
+    <a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener" class="btn-google-review" style="margin-top:0.75rem;">
+      <span class="g-icon">G</span> Find Us on Google Maps
+    </a>
   </div>
 
   <div class="contact-form reveal">
@@ -1088,6 +1318,8 @@ padding: 4rem 2rem;
   <ul class="footer-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="https://maps.app.goo.gl/SsPQuoXsyj9z5i2Y6?g_st=ic" target="_blank" rel="noopener">Google Maps</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </footer>
